@@ -49,7 +49,7 @@ jobs:
         run: go test ./... -v
 
       - name: Build
-        run: go build .
+        run: go build main.go
 
       - name: Projeto compilado
         uses: actions/upload-artifact@v4
