@@ -41,7 +41,7 @@ jobs:
 
       - name: Test
         env:
-          DB_HOST: postgres
+          DB_HOST: localhost
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
