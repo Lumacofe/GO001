@@ -20,7 +20,7 @@ jobs:
           POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
           POSTGRES_DB: ${{ secrets.DB_NAME }}
         options: >-
-          --health-ccmd "pg_isready -U postgres"
+          --health-cmd "pg_isready -U postgres"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -46,10 +46,10 @@ jobs:
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           DB_NAME: ${{ secrets.DB_NAME }}
           DB_PORT: 5432
-        run: go test -v main_test.go
+        run: go test ./... -v
 
       - name: Build
-        run: go build main.go
+        run: go build .
 
       - name: Projeto compilado
         uses: actions/upload-artifact@v4
